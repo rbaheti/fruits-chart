@@ -1,13 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import reducer from "./reducers";
 import middleware from "./middleware";
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from "./serviceWorker";
 
 const store = createStore(reducer, middleware);
 

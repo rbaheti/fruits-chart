@@ -1,0 +1,2 @@
+export const GET_FRUITS = "GET_FRUITS";
+export const SET_CURRENT_FRUIT = "SET_CURRENT_FRUIT";

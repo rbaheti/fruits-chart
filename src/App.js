@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import Sidebar from "./components/Sidebar";
+import Content from "./components/Content";
+import {getFruits} from "./actions/getFruits";
+import {Row} from "react-bootstrap";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  componentDidMount() {
+    this.props.dispatch(getFruits());
+  }
+
+  render() {
+    return (
+      <div>
+        <Row>
+          <Sidebar/>
+        </Row>
+        <div className="col-md-9 ml-sm-auto col-lg-10">
+          <Content/>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapSateToProps = state => ({
+  fruits: state.fruits
+});
+
+export default connect(mapSateToProps)(App);
