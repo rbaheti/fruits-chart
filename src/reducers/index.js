@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
 import fruits from "./fruitsReducer";
-import currentFruit from "./currentFruitReducer";
+import currentFruitIndex from "./currentFruitIndexReducer";
 
 export default combineReducers({
   fruits,
-  currentFruit
+  currentFruitIndex
 });

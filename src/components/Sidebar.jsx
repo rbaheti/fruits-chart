@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Row, Col, Navbar, Nav} from "react-bootstrap";
-import {setCurrentFruit} from "../actions/getFruits";
+import {setCurrentFruitIndex} from "../actions/getFruits";
 
 class Sidebar extends Component {
-  onSidebarItemClicked = currentFruit => {
-    this.props.dispatch(setCurrentFruit(currentFruit));
+  onSidebarItemClicked = currentFruitIndex => {
+    this.props.dispatch(setCurrentFruitIndex(currentFruitIndex));
   }
 
   render() {
@@ -18,7 +18,7 @@ class Sidebar extends Component {
           <Col>
             {fruits.map((d, i) =>
               <Nav.Link key={d.name}
-                className={`fruit-sidebar-item ${(i === this.props.currentFruit) ? "active" : ""}`}
+                className={`fruit-sidebar-item ${(i === this.props.currentFruitIndex) ? "active" : ""}`}
                 onClick={() => this.onSidebarItemClicked(i)}>
                 {d.name}
               </Nav.Link>
@@ -32,7 +32,7 @@ class Sidebar extends Component {
 
 const mapSateToProps = state => ({
   fruits: state.fruits,
-  currentFruit: state.currentFruit
+  currentFruitIndex: state.currentFruitIndex
 });
 
 export default connect(mapSateToProps)(Sidebar);

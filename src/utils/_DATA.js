@@ -4,11 +4,37 @@ const fruits = [
     types: [
       {
         name: "Fuji",
-        data: []
+        deliciousnessData: [
+          {
+            unixTimestamp: 1560642423,
+            deliciousness: 4
+          },
+          { 
+            unixTimestamp: 1560642422,
+            deliciousness: 3
+          },
+          { 
+            unixTimestamp: 1560642421,
+            deliciousness: 2.2
+          }
+        ]
       },
       {
         name: "Crisp",
-        data: []
+        deliciousnessData: [
+          {
+            unixTimestamp: 1560642423,
+            deliciousness: 2.2
+          },
+          { 
+            unixTimestamp: 1560469623,
+            deliciousness: 3
+          },
+          { 
+            unixTimestamp: 1560210423,
+            deliciousness: 4
+          }
+        ]
       }
     ]
   },
@@ -17,11 +43,11 @@ const fruits = [
     types: [
       {
         name: "yellow",
-        data: []
+        deliciousnessData: []
       },
       {
         name: "green",
-        data: []
+        deliciousnessData: [1, 2, 3]
       }
     ]
   },
@@ -30,11 +56,11 @@ const fruits = [
     types: [
       {
         name: "red",
-        data: []
+        deliciousnessData: [1, 2]
       },
       {
         name: "yellow",
-        data: []
+        deliciousnessData: [1, 2, 3]
       }
     ]
   }

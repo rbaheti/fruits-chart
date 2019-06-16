@@ -11,3 +11,12 @@
 .fruit-sidebar-item {
   font-weight: 500;
 }
+
+.content {
+  color: rgba(0,0,0,.9);
+  max-width: 800px;
+}
+
+.deliciosnessTR {
+  cursor: pointer;
+}
