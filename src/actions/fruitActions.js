@@ -1,4 +1,4 @@
-import {GET_FRUITS, SET_CURRENT_FRUIT_INDEX} from "./types";
+import {GET_FRUITS, SET_CURRENT_FRUIT_INDEX, SET_CURRENT_FRUIT_TYPE_INDEX} from "./types";
 
 import _getFruitsData from "../utils/api";
 
@@ -17,5 +17,13 @@ export function setCurrentFruitIndex(currentFruitIndex) {
     dispatch({
       type: SET_CURRENT_FRUIT_INDEX,
       currentFruitIndex
+    });
+}
+
+export function setCurrentFruitTypeIndex(currentFruitTypeIndex) {
+  return dispatch =>
+    dispatch({
+      type: SET_CURRENT_FRUIT_TYPE_INDEX,
+      currentFruitTypeIndex
     });
 }

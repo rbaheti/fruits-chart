@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import Sidebar from "./components/Sidebar";
 import Content from "./components/Content";
-import {getFruits} from "./actions/getFruits";
+import {getFruits} from "./actions/fruitActions";
 import {Row} from "react-bootstrap";
 import "./App.css";
 

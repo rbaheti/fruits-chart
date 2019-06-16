@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
+import {setCurrentFruitTypeIndex} from "../actions/fruitActions";
 import {Table} from "react-bootstrap";
 import Chart from "./Chart";
 import moment from "moment";
@@ -10,7 +11,7 @@ class Content extends Component {
   }
 
   onFruitTypeClicked = currentFruitTypeIndex => {
-    this.setState({currentFruitTypeIndex});
+    this.props.dispatch(setCurrentFruitTypeIndex(currentFruitTypeIndex));
   }
 
   getTimeSpanStr = deliciousnessData => {
@@ -62,7 +63,7 @@ class Content extends Component {
             </tbody>
           </Table>
         </div>
-        <Chart currentFruitObj={currentFruitObj} currentFruitTypeIndex={this.state.currentFruitTypeIndex} />
+        <Chart key={`${this.props.currentFruitIndex} - ${this.props.currentFruitTypeIndex}`}/>
       </div>
     );
   }
@@ -70,7 +71,8 @@ class Content extends Component {
 
 const mapSateToProps = state => ({
   fruits: state.fruits,
-  currentFruitIndex: state.currentFruitIndex
+  currentFruitIndex: state.currentFruitIndex, 
+  currentFruitTypeIndex: state.currentFruitTypeIndex
 });
 
 export default connect(mapSateToProps)(Content);

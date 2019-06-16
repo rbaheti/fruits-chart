@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Row, Col, Navbar, Nav} from "react-bootstrap";
-import {setCurrentFruitIndex} from "../actions/getFruits";
+import {setCurrentFruitIndex} from "../actions/fruitActions";
 
 class Sidebar extends Component {
   onSidebarItemClicked = currentFruitIndex => {
